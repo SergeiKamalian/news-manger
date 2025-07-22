@@ -6,7 +6,11 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: "Roboto Condensed", sans-serif;
+  font-family: "DM Sans", sans-serif;
+}
+
+body {
+  overflow-x: hidden;
 }
 
 @layer base {
@@ -71,5 +75,34 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@keyframes fall {
+  to {
+    transform: translate3d(-30em, 0, 30em);
+  }
+}
+
+@keyframes tail-fade {
+  0%,
+  50% {
+    width: var(--star-tail-length, 6em);
+    opacity: 0.3;
+  }
+
+  80% {
+    width: var(--star-tail-length, 6em);
+    opacity: 0;
+  }
+  100% {
+    width: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0.6;
   }
 }

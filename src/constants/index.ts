@@ -3,3 +3,5 @@ export const LIST_ITEMS = {
   date: { id: 1, value: "Date posted", widthClass: "w-[25%]" },
   pin: { id: 2, value: "Pin", widthClass: "w-[40%]" },
 };
+
+export * from "./projects";

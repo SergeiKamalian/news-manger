@@ -1,21 +1,30 @@
 import {
-  AddNewPost,
-  NewsList,
-  SearchInput,
-  SortDropdown,
-  Pagination,
-} from "./components";
+  Background,
+  Education,
+  Experience,
+  Header,
+  Main,
+  Skills,
+  Works,
+  Languages,
+  Contact,
+} from "./ui";
 
 function App() {
   return (
-    <div className="w-full flex flex-col gap-[30px] max-w-4xl p-10 mx-auto">
-      <AddNewPost />
-      <div className="w-full flex gap-[20px]">
-        <SearchInput />
-        <SortDropdown />
-      </div>
-      <NewsList />
-      <Pagination />
+    <div className="w-[100svw] h-[100svh] bg-black">
+      <Background />
+
+      <main className="h-[200svh] relative z-10">
+        <Header />
+        <Main />
+        <Works />
+        <Experience />
+        <Education />
+        <Skills />
+        <Languages />
+        <Contact />
+      </main>
     </div>
   );
 }

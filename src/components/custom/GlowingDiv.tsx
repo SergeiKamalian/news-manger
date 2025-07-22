@@ -18,20 +18,18 @@ interface AppButtonProps extends ComponentProps<typeof Button> {
   children: ReactNode;
   icon?: "plus" | "edit" | "delete";
   customSize?: "md" | "lg";
-  isDownload?: boolean;
 }
 
-export function AppButton({
+export function GrowingDiv({
   children,
   icon,
   customSize = "md",
-  isDownload = false,
   className,
   ...rest
 }: AppButtonProps) {
   const iconSizeClass = customSize === "lg" ? "h-7 w-7" : "h-6 w-6";
-  const paddingClass = customSize === "lg" ? "px-3 py-4" : "px-4 py-4";
-  const heightClass = customSize === "lg" ? "h-12" : "h-10";
+  const paddingClass = customSize === "lg" ? "px-1 py-1" : "px-1 py-1";
+  const heightClass = customSize === "lg" ? "h-12" : "h-9";
 
   const renderIcon = () => {
     switch (icon) {
@@ -47,25 +45,25 @@ export function AppButton({
   };
 
   return (
-    <div className="relative inline-block p-[1px] overflow-hidden rounded-xl group">
-      <div className="absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-        <MovingBorder duration={3000} rx="20%" ry="20%">
-          <div className="h-20 w-20 bg-[radial-gradient(#959598b5,transparent_60%)] opacity-70" />
+    <div className="relative inline-block p-[1px] overflow-hidden rounded-xl w-fit">
+      <div className="absolute inset-0">
+        <MovingBorder duration={5000} rx="20%" ry="20%">
+          <div className="h-20 w-20 bg-[radial-gradient(#2B8C5A_40%,transparent_60%)] opacity-70" />
         </MovingBorder>
       </div>
 
       <Button
         className={cn(
           `relative flex items-center gap-2 text-[16px] font-normal border-none rounded-xl
-           bg-[rgb(25,25,31)] text-[#f5f5f5] 
-           ${paddingClass} ${heightClass} ${isDownload ? "w-full" : ""}`,
+           bg-[#0D0D0D] text-[#9BC7B1] 
+           ${paddingClass} ${heightClass}`,
           className
         )}
         style={{
           boxShadow:
             "rgba(0, 0, 0, 0.18) 0px 0.6px 0.6px -1.25px, rgba(0, 0, 0, 0.16) 0px 2.2px 2.2px -2.5px, rgba(0, 0, 0, 0.063) 0px 10px 10px -3.75px",
           backdropFilter: "blur(10px)",
-          textShadow: "rgba(255, 255, 255, 0.33) 0px 0px 7px",
+          border: "1px solid #2B8C5A1C",
         }}
         {...rest}
       >
@@ -76,7 +74,6 @@ export function AppButton({
   );
 }
 
-// ✅ Анимация движущейся границы
 function MovingBorder({
   children,
   duration = 3000,
@@ -132,7 +129,6 @@ function MovingBorder({
           top: 0,
           left: 0,
           transform,
-          transition: "all 0.3s",
         }}
       >
         {children}
