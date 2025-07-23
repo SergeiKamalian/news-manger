@@ -4,10 +4,11 @@ import { useScroll, useTransform, motion, useSpring } from "framer-motion";
 
 interface WorkItemProps {
   project: ProjectType;
+  isActive?: boolean;
 }
 
 export const WorkItem = memo((props: WorkItemProps) => {
-  const { project } = props;
+  const { project, isActive } = props;
   const ref = useRef<HTMLDivElement>(null);
 
   const { scrollYProgress } = useScroll({
@@ -29,15 +30,19 @@ export const WorkItem = memo((props: WorkItemProps) => {
 
   return (
     <motion.div className="w-full relative group cursor-pointer" ref={ref}>
-      <div className="w-[90%] left-[5%] relative bottom-0 h-[300px] flex items-center justify-center">
+      <div className="w-[90%] left-[5%] relative bottom-0  flex items-center justify-center">
         <div
-          className="w-[20%] h-[20%] bg-[#00000051] relative mt-12 rounded-full transition-opacity duration-300 opacity-0 group-hover:opacity-100"
+          className={`
+          w-[20%] h-[20%] bg-[#00000051] absolute mt-12 rounded-full
+          transition-opacity duration-300 group-hover:opacity-100
+          ${isActive ? "opacity-100 md:opacity-0" : "opacity-0"}
+        `}
           style={{
             boxShadow: project.boxShadow,
           }}
         />
         <motion.div
-          className="absolute bottom-[-10px] origin-bottom"
+          className="relative origin-bottom bottom-[-15px]"
           style={{
             opacity,
             transform: combinedTransform,
@@ -93,7 +98,7 @@ export const WorkItem = memo((props: WorkItemProps) => {
             </span>
           </div>
           <motion.div
-            className="w-[64px] h-[64px] rounded-2xl overflow-hidden transition-all duration-500 group-hover:grayscale-0 grayscale"
+            className="md:w-[64px] md:h-[64px] w-[50px] h-[50px] rounded-xl md:rounded-2xl overflow-hidden transition-all duration-500 group-hover:grayscale-0 grayscale"
             style={{
               boxShadow:
                 "rgba(0, 0, 0, 0.08) 0px 0.482901px 1.06238px -0.5px, rgba(0, 0, 0, 0.23) 0px 4px 8.8px -1px, rgba(255, 255, 255, 0.06) 0px 0px 0px 1px",

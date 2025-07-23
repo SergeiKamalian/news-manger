@@ -40,6 +40,7 @@ export const Contact = memo(() => {
           opacity,
           willChange: "transform, opacity",
         }}
+        className="w-full"
       >
         <div className="flex flex-row items-center gap-5">
           {icon}
@@ -62,20 +63,32 @@ export const Contact = memo(() => {
 
   return (
     <div
-      className="max-w-[1100px] m-auto text-white mt-[70px] flex flex-row justify-between  relative"
+      className="mt-[50px] md:mt-[70px] max-w-[1140px] px-[20px] m-auto flex flex-row justify-between relative"
       ref={ref}
     >
-      <div className="flex flex-col gap-6">
+      <div className="flex flex-col gap-6 relative z-10 w-full sm:w-auto">
         <p className="text-center text-[50px] font-bold leading-[1.4em] tracking-[-0.02em] text-[rgba(209,213,230,0.87)] font-sans w-fit">
           <span className="bg-gradient-to-b from-[rgba(190,193,207,0.64)] via-[rgba(213,216,234,0.89)] to-[rgb(223,226,245)] bg-clip-text text-transparent ">
             Get in touch
           </span>
         </p>
-        <div className="grid grid-cols-2 gap-2">
-          {contactItem("Phone", "+374 93 604-808", <Phone />)}
-          {contactItem("Email", "qamalyan2021gmail.com", <Mail />)}
-          {contactItem("Address", "Yerevan, Armenia", <MapPin />)}
-          <div className="flex flex-row gap-4 items-center justify-center">
+        <div className=" flex flex-col md:grid md:grid-cols-2 gap-2">
+          {contactItem(
+            "Phone",
+            "+374 93 604-808",
+            <Phone color="hsl(234deg 21.74% 81.96%)" />
+          )}
+          {contactItem(
+            "Email",
+            "qamalyan2021gmail.com",
+            <Mail color="hsl(234deg 21.74% 81.96%)" />
+          )}
+          {contactItem(
+            "Address",
+            "Yerevan, Armenia",
+            <MapPin color="hsl(234deg 21.74% 81.96%)" />
+          )}
+          <div className="flex flex-row gap-4 items-center justify-center mt-5 md:mt-0">
             <a href="https://www.linkedin.com/in/sergey-kamalyan-37579524a/">
               <img src="/linkedin.svg" alt="linkedin" />
             </a>
@@ -92,10 +105,12 @@ export const Contact = memo(() => {
         </div>
       </div>
 
+      {/* <div className="h-[300px]"></div> */}
+
       <motion.img
         src="/main-footer.png"
         alt="Photo"
-        className="w-[45%] grayscale-[0.4] absolute right-[-10%] bottom-[-30%]"
+        className="sm:w-[45%] w-[100%] grayscale-[0.4] absolute right-[0] sm:right-[-10%] bottom-[-30%]"
       />
     </div>
   );

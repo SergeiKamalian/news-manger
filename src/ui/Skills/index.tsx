@@ -25,10 +25,10 @@ export const Skills = memo(() => {
 
   return (
     <div
-      className="w-full mt-[70px] max-w-[1100px] m-auto flex flex-col gap-6"
+      className="w-full mt-[50px] md:mt-[70px] max-w-[1140px] px-[20px] m-auto flex flex-col gap-6"
       ref={ref}
     >
-      <p className="text-center text-[50px] font-bold leading-[1.4em] tracking-[-0.02em] text-[rgba(209,213,230,0.87)] font-sans w-fit">
+      <p className="text-center text-[40px] lg:text-[50px] font-bold leading-[1.4em] tracking-[-0.02em] text-[rgba(209,213,230,0.87)] font-sans w-fit">
         <span className="bg-gradient-to-b from-[rgba(190,193,207,0.64)] via-[rgba(213,216,234,0.89)] to-[rgb(223,226,245)] bg-clip-text text-transparent ">
           Skills
         </span>
@@ -66,7 +66,7 @@ WebSocket (ws), MongoDB, Vite, Webpack, Babel, esbuild, pnpm, Turborepo, FSD / A
                 >
                   <p
                     key={i}
-                    className="text-start text-[24px] font-normal leading-[1.4em] tracking-[-0.02em] text-[rgba(209,213,230,0.87)] font-sans w-fit"
+                    className="text-start text-[16px] md:text-[24px] font-normal leading-[1.4em] tracking-[-0.02em] text-[rgba(209,213,230,0.87)] font-sans w-fit"
                   >
                     <span className="bg-gradient-to-b from-[rgba(190,193,207,0.64)] via-[rgba(213,216,234,0.89)] to-[rgb(223,226,245)] bg-clip-text text-transparent ">
                       {i}

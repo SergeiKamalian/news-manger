@@ -7,6 +7,7 @@ const TELCELL_MARKET = {
   name: "Telcell Market",
   description: "Armenian online marketplace",
   type: "Web app",
+  url: "https://telcell.market/en",
 };
 
 const DINELY = {
@@ -18,6 +19,7 @@ const DINELY = {
   name: "Dinely",
   description: "QR ordering platform",
   type: "Web app",
+  url: "https://dinely.co/",
 };
 const RUSARM = {
   id: 2,
@@ -28,6 +30,7 @@ const RUSARM = {
   name: "RA Services",
   description: "Online ticketing & logistics",
   type: "Web app",
+  url: "https://rusarm-transits.am/",
 };
 const UI_KIT = {
   id: 3,
@@ -38,6 +41,7 @@ const UI_KIT = {
   name: "TCM UI Lib",
   description: "Customizable multi-project UI kit",
   type: "UI Kit",
+  url: "https://www.npmjs.com/package/tcm-ui-kit",
 };
 const BUSINESS = {
   id: 4,
@@ -48,6 +52,7 @@ const BUSINESS = {
   name: "Telcell Business",
   description: "Business growth landing page",
   type: "Web app",
+  url: "",
 };
 const IPO = {
   id: 5,
@@ -58,6 +63,7 @@ const IPO = {
   name: "Telcell Invest",
   description: "IPO stock purchase page",
   type: "Web app",
+  url: "",
 };
 
 export const PROJECTS = [TELCELL_MARKET, DINELY, RUSARM, UI_KIT, BUSINESS, IPO];

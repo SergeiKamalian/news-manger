@@ -24,20 +24,13 @@ export const Education = memo(() => {
   );
 
   return (
-    <div className="w-full mt-[70px] max-w-[1100px] m-auto flex flex-col gap-6 text-white">
-      <p className="text-center text-[50px] font-bold leading-[1.4em] tracking-[-0.02em] text-[rgba(209,213,230,0.87)] font-sans w-fit">
+    <div className="w-full mt-[50px] md:mt-[70px] max-w-[1140px] px-[20px] m-auto flex flex-col gap-6 text-white">
+      <p className="text-center text-[40px] lg:text-[50px] font-bold leading-[1.4em] tracking-[-0.02em] text-[rgba(209,213,230,0.87)] font-sans w-fit">
         <span className="bg-gradient-to-b from-[rgba(190,193,207,0.64)] via-[rgba(213,216,234,0.89)] to-[rgb(223,226,245)] bg-clip-text text-transparent ">
           Education
         </span>
       </p>
-      <div
-        ref={ref}
-        style={{
-          display: "grid",
-          gridTemplateColumns: "1fr 1fr",
-          gap: 24,
-        }}
-      >
+      <div ref={ref} className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <motion.div
           className="w-full flex flex-row gap-1 transition-all duration-300 gap-3"
           style={{

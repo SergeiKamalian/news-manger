@@ -25,21 +25,15 @@ export const Languages = memo(() => {
 
   return (
     <div
-      className="w-full mt-[70px] max-w-[1100px] m-auto flex flex-col gap-6"
+      className="w-full mt-[50px] md:mt-[70px] max-w-[1140px] px-[20px] m-auto flex flex-col gap-6 relative z-10"
       ref={ref}
     >
-      <p className="text-center text-[50px] font-bold leading-[1.4em] tracking-[-0.02em] text-[rgba(209,213,230,0.87)] font-sans w-fit">
+      <p className="text-center text-[40px] lg:text-[50px] font-bold leading-[1.4em] tracking-[-0.02em] text-[rgba(209,213,230,0.87)] font-sans w-fit">
         <span className="bg-gradient-to-b from-[rgba(190,193,207,0.64)] via-[rgba(213,216,234,0.89)] to-[rgb(223,226,245)] bg-clip-text text-transparent ">
           Languages
         </span>
       </p>{" "}
-      <motion.div
-        style={{
-          display: "flex",
-          // gridTemplateColumns: "1fr 1fr 1fr",
-          gap: 24,
-        }}
-      >
+      <motion.div className=" flex md:flex-row flex-col gap-3 md:gap-6">
         <motion.div
           style={{
             backdropFilter: "blur(10px)",
@@ -55,7 +49,7 @@ export const Languages = memo(() => {
           }}
         >
           <div className="flex flex-row items-center gap-3">
-            <img src="/us.svg" alt="English" className="w-16" />
+            <img src="/us.svg" alt="English" className="md:w-16 w-10" />
             <p className="text-start text-[24px] font-bold leading-[1.4em] tracking-[-0.02em] text-[rgba(209,213,230,0.87)] font-sans w-fit">
               <span className="bg-gradient-to-b from-[rgba(190,193,207,0.64)] via-[rgba(213,216,234,0.89)] to-[rgb(223,226,245)] bg-clip-text text-transparent ">
                 Intermediate
@@ -78,7 +72,7 @@ export const Languages = memo(() => {
           }}
         >
           <div className="flex flex-row items-center gap-3">
-            <img src="/ru.svg" alt="Russian" className="w-16" />
+            <img src="/ru.svg" alt="Russian" className="md:w-16 w-10" />
             <p className="text-start text-[24px] font-bold leading-[1.4em] tracking-[-0.02em] text-[rgba(209,213,230,0.87)] font-sans w-fit">
               <span className="bg-gradient-to-b from-[rgba(190,193,207,0.64)] via-[rgba(213,216,234,0.89)] to-[rgb(223,226,245)] bg-clip-text text-transparent ">
                 Fluent
@@ -101,7 +95,7 @@ export const Languages = memo(() => {
           }}
         >
           <div className="flex flex-row items-center gap-3">
-            <img src="/am.svg" alt="Armenian" className="w-16" />
+            <img src="/am.svg" alt="Armenian" className="md:w-16 w-10" />
             <p className="text-start text-[24px] font-bold leading-[1.4em] tracking-[-0.02em] text-[rgba(209,213,230,0.87)] font-sans w-fit">
               <span className="bg-gradient-to-b from-[rgba(190,193,207,0.64)] via-[rgba(213,216,234,0.89)] to-[rgb(223,226,245)] bg-clip-text text-transparent ">
                 Native

@@ -4,7 +4,7 @@ import { GrowingDiv } from "../../components";
 
 export const Main = memo(() => {
   return (
-    <div className="w-full pt-[100px] flex flex-col items-center">
+    <div className="w-full pt-[120px] flex flex-col items-center sm:pt-[100px]">
       <ImageAndTech />
       <MainText />
     </div>
@@ -20,7 +20,7 @@ const MainText = memo(() => {
       style={{ color: "white" }}
       className="relative top-12 z-20 flex flex-col gap-6 items-center"
     >
-      <p className="text-center text-[44px] font-medium leading-[1.4em] tracking-[-0.02em] text-[rgba(209,213,230,0.87)] font-sans">
+      <p className="text-center text-[34px] font-medium leading-[1.4em] tracking-[-0.02em] text-[rgba(209,213,230,0.87)] font-sans sm:text-[44px]">
         <span className="bg-gradient-to-b from-[rgba(190,193,207,0.64)] via-[rgba(213,216,234,0.89)] to-[rgb(223,226,245)] bg-clip-text text-transparent">
           Hi, I'm Sergey 💫 <br />{" "}
           <span className="font-normal">I develop</span>{" "}
@@ -50,7 +50,7 @@ const ImageAndTech = memo(() => {
       transition={{ duration: 0.7, delay: 0.5 }}
     >
       <div
-        className="w-[330px] h-[330px] rounded-full bg-black p-2.5"
+        className="w-[280px] h-[280px] rounded-full bg-black p-2.5 sm:w-[330px] sm:h-[330px]"
         style={{
           background: "rgb(21, 21, 24)",
           border: "1px solid rgb(30 30 33)",
@@ -61,7 +61,7 @@ const ImageAndTech = memo(() => {
         </div>
       </div>
       <div
-        className="absolute bottom-[-10px] w-[150%] left-[-25%] h-[50px]"
+        className="absolute bottom-[-10px] w-[110%] left-[-5%] h-[50px] sm:w-[150%] sm:left-[-25%]"
         style={{
           maskImage:
             "linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 20%, rgb(0, 0, 0) 80%, rgba(0, 0, 0, 0) 100%)",

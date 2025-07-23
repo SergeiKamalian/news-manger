@@ -1,5 +1,4 @@
 import { memo } from "react";
-import { AppButton } from "../../components";
 import { motion, useScroll, useTransform, useMotionValue } from "framer-motion";
 
 export const Header = memo(() => {
@@ -22,9 +21,9 @@ export const Header = memo(() => {
         opacity,
         transform: combinedTransform,
       }}
-      className="fixed top-[60px] left-1/2 w-full max-w-[1100px] flex items-center justify-between"
+      className="fixed top-[30px] left-1/2 w-full max-w-[1140px] px-[20px] flex items-center justify-center md:top-[60px] md:justify-between"
     >
-      <div className="flex flex-col justify-start opacity-90">
+      <div className="flex flex-col justify-center items-center opacity-90 md:justify-start md:items-start">
         <motion.h1
           initial={{ opacity: 0, scale: 0.7 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -52,7 +51,7 @@ export const Header = memo(() => {
           Front-end developer
         </motion.h2>
       </div>
-      <motion.div
+      {/* <motion.div
         className="flex flex-row gap-5"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -61,7 +60,7 @@ export const Header = memo(() => {
         <AppButton>Work</AppButton>
         <AppButton>Resume</AppButton>
         <AppButton>Contact</AppButton>
-      </motion.div>
+      </motion.div> */}
     </motion.div>
   );
 });

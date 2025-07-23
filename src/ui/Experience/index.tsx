@@ -54,9 +54,9 @@ const experienceItems = [dinely, tcm, rusarm];
 
 export const Experience = memo(() => {
   return (
-    <div className="w-full mt-[150px] max-w-[1100px] m-auto flex flex-col gap-6">
-      <p className="text-center text-[50px] font-bold leading-[1.4em] tracking-[-0.02em] text-[rgba(209,213,230,0.87)] font-sans w-fit">
-        <span className="bg-gradient-to-b from-[rgba(190,193,207,0.64)] via-[rgba(213,216,234,0.89)] to-[rgb(223,226,245)] bg-clip-text text-transparent ">
+    <div className="w-full mt-[50px] lg:mt-[150px] max-w-[1140px] px-[20px] m-auto flex flex-col gap-6">
+      <p className="text-center text-[40px] lg:text-[50px] font-bold leading-[1.4em] tracking-[-0.02em] text-[rgba(209,213,230,0.87)] font-sans w-fit">
+        <span className="bg-gradient-to-b from-[rgba(175,189,248,0.64)] via-[rgba(213,216,234,0.89)] to-[rgb(223,226,245)] bg-clip-text text-transparent ">
           Experience
         </span>
       </p>
