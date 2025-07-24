@@ -1,5 +1,6 @@
 import { useScroll, useSpring, useTransform, motion } from "framer-motion";
 import { memo, useRef } from "react";
+import { useTranslation } from "react-i18next";
 
 export const Languages = memo(() => {
   const ref = useRef<HTMLDivElement>(null);
@@ -22,6 +23,7 @@ export const Languages = memo(() => {
     [rotateX, y],
     ([rx, ty]) => `rotateX(${rx}deg) translateY(${ty}px)`
   );
+  const { t } = useTranslation();
 
   return (
     <div
@@ -30,7 +32,7 @@ export const Languages = memo(() => {
     >
       <p className="text-center text-[40px] lg:text-[50px] font-bold leading-[1.4em] tracking-[-0.02em] text-[rgba(209,213,230,0.87)] font-sans w-fit">
         <span className="bg-gradient-to-b from-[rgba(190,193,207,0.64)] via-[rgba(213,216,234,0.89)] to-[rgb(223,226,245)] bg-clip-text text-transparent ">
-          Languages
+          {t("languages")}
         </span>
       </p>{" "}
       <motion.div className=" flex md:flex-row flex-col gap-3 md:gap-6">
@@ -52,7 +54,7 @@ export const Languages = memo(() => {
             <img src="/us.svg" alt="English" className="md:w-16 w-10" />
             <p className="text-start text-[24px] font-bold leading-[1.4em] tracking-[-0.02em] text-[rgba(209,213,230,0.87)] font-sans w-fit">
               <span className="bg-gradient-to-b from-[rgba(190,193,207,0.64)] via-[rgba(213,216,234,0.89)] to-[rgb(223,226,245)] bg-clip-text text-transparent ">
-                Intermediate
+                {t("Intermediate")}
               </span>
             </p>
           </div>
@@ -75,7 +77,7 @@ export const Languages = memo(() => {
             <img src="/ru.svg" alt="Russian" className="md:w-16 w-10" />
             <p className="text-start text-[24px] font-bold leading-[1.4em] tracking-[-0.02em] text-[rgba(209,213,230,0.87)] font-sans w-fit">
               <span className="bg-gradient-to-b from-[rgba(190,193,207,0.64)] via-[rgba(213,216,234,0.89)] to-[rgb(223,226,245)] bg-clip-text text-transparent ">
-                Fluent
+                {t("Fluent")}
               </span>
             </p>
           </div>
@@ -98,7 +100,7 @@ export const Languages = memo(() => {
             <img src="/am.svg" alt="Armenian" className="md:w-16 w-10" />
             <p className="text-start text-[24px] font-bold leading-[1.4em] tracking-[-0.02em] text-[rgba(209,213,230,0.87)] font-sans w-fit">
               <span className="bg-gradient-to-b from-[rgba(190,193,207,0.64)] via-[rgba(213,216,234,0.89)] to-[rgb(223,226,245)] bg-clip-text text-transparent ">
-                Native
+                {t("Native")}
               </span>
             </p>
           </div>

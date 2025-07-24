@@ -1,5 +1,6 @@
 import { useScroll, useSpring, useTransform, motion } from "framer-motion";
 import { memo, useRef } from "react";
+import { useTranslation } from "react-i18next";
 
 export const Skills = memo(() => {
   const ref = useRef<HTMLDivElement>(null);
@@ -22,7 +23,7 @@ export const Skills = memo(() => {
     [rotateX, y],
     ([rx, ty]) => `rotateX(${rx}deg) translateY(${ty}px)`
   );
-
+  const { t } = useTranslation();
   return (
     <div
       className="w-full mt-[50px] md:mt-[70px] max-w-[1140px] px-[20px] m-auto flex flex-col gap-6"
@@ -30,7 +31,7 @@ export const Skills = memo(() => {
     >
       <p className="text-center text-[40px] lg:text-[50px] font-bold leading-[1.4em] tracking-[-0.02em] text-[rgba(209,213,230,0.87)] font-sans w-fit">
         <span className="bg-gradient-to-b from-[rgba(190,193,207,0.64)] via-[rgba(213,216,234,0.89)] to-[rgb(223,226,245)] bg-clip-text text-transparent ">
-          Skills
+          {t("skills")}
         </span>
       </p>{" "}
       <motion.div

@@ -1,6 +1,7 @@
 import { memo, useRef } from "react";
 import type { ExperienceItemType } from ".";
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
+import { useTranslation } from "react-i18next";
 interface Props {
   item: ExperienceItemType;
 }
@@ -28,6 +29,7 @@ export const ExperienceItem = memo((props: Props) => {
     [rotateX, y],
     ([rx, ty]) => `rotateX(${rx}deg) translateY(${ty}px)`
   );
+  const { t, i18n } = useTranslation();
 
   return (
     <motion.div
@@ -65,23 +67,25 @@ export const ExperienceItem = memo((props: Props) => {
             </p>
             <p className="text-center text-[14px] md:text-[20px] font-medium leading-[1.4em] tracking-[-0.02em] text-[rgba(209,213,230,0.69)] font-sans w-fit">
               <span className="bg-gradient-to-b from-[rgba(190,193,207,0.46)] via-[rgba(213,216,234,0.67)] to-[rgba(223,226,245,0.63)] bg-clip-text text-transparent ">
-                {item.exp}
+                {t(item.exp)}
               </span>
             </p>
           </div>
         </div>
       </div>
       <div className="md:ml-[114px] mt-[10px] flex flex-col gap-2">
-        {item.list.map((i, index) => (
-          <p
-            key={index}
-            className="text-[20px] font-[200] leading-[1.4em] tracking-[-0.02em] text-[rgba(209,213,230,0.69)] font-sans w-fit"
-          >
-            <span className="bg-gradient-to-b from-[rgba(190,193,207,0.46)] via-[rgba(213,216,234,0.67)] to-[rgba(223,226,245,0.63)] bg-clip-text text-transparent ">
-              <span className="mr-1">•</span> {i}
-            </span>
-          </p>
-        ))}
+        {(i18n.language === "en" ? item.list_en : item.list_ru).map(
+          (i, index) => (
+            <p
+              key={index}
+              className="text-[20px] font-[200] leading-[1.4em] tracking-[-0.02em] text-[rgba(209,213,230,0.69)] font-sans w-fit"
+            >
+              <span className="bg-gradient-to-b from-[rgba(190,193,207,0.46)] via-[rgba(213,216,234,0.67)] to-[rgba(223,226,245,0.63)] bg-clip-text text-transparent ">
+                <span className="mr-1">•</span> {i}
+              </span>
+            </p>
+          )
+        )}
       </div>
       <div className="md:ml-[114px] mt-[10px] text-white flex gap-3">
         <p className="text-[20px] font-[500] leading-[1.4em] tracking-[-0.02em] text-[rgba(209,213,230,0.83)] font-sans w-fit">

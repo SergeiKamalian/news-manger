@@ -14,6 +14,10 @@ body {
   background: black;
 }
 
+body.font-ru {
+  font-family: "DM Sans", "Montserrat", sans-serif;
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;

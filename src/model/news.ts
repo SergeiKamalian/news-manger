@@ -7,14 +7,14 @@ import { NEWS_MOCK_DATA } from "../mock";
 const LOCAL_STORAGE_KEY = "news-data";
 const loadNewsFromStorage = (): NewsItem[] => {
   try {
-    const raw = localStorage.getItem(LOCAL_STORAGE_KEY);
-    if (!raw) {
-      localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(NEWS_MOCK_DATA));
-      return NEWS_MOCK_DATA;
-    }
-    const parsed = JSON.parse(raw);
-    if (!Array.isArray(parsed)) return NEWS_MOCK_DATA;
-    return parsed;
+    // const raw = localStorage.getItem(LOCAL_STORAGE_KEY);
+    // if (!raw) {
+    //   // localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(NEWS_MOCK_DATA));
+    //   return NEWS_MOCK_DATA;
+    // }
+    // const parsed = JSON.parse(raw);
+    // if (!Array.isArray(parsed)) return NEWS_MOCK_DATA;
+    return [];
   } catch {
     return NEWS_MOCK_DATA;
   }

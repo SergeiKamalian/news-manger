@@ -5,8 +5,8 @@ const TELCELL_MARKET = {
   preview: "/telcell-preview.png",
   logo: "/tcm-logo.png",
   name: "Telcell Market",
-  description: "Armenian online marketplace",
-  type: "Web app",
+  description: "armenian_online_marketplace",
+  type: "web_app",
   url: "https://telcell.market/en",
 };
 
@@ -17,8 +17,8 @@ const DINELY = {
   preview: "/dinely-preview.png",
   logo: "/dinely-logo.svg",
   name: "Dinely",
-  description: "QR ordering platform",
-  type: "Web app",
+  description: "QR_ordering_platform",
+  type: "web_app",
   url: "https://dinely.co/",
 };
 const RUSARM = {
@@ -28,8 +28,8 @@ const RUSARM = {
   preview: "/rusarm-preview.png",
   logo: "/rusarm-logo.png",
   name: "RA Services",
-  description: "Online ticketing & logistics",
-  type: "Web app",
+  description: "Online_ticketing_&_logistics",
+  type: "web_app",
   url: "https://rusarm-transits.am/",
 };
 const UI_KIT = {
@@ -39,7 +39,7 @@ const UI_KIT = {
   preview: "/ui-kit-preview.png",
   logo: "/ui-kit-logo.png",
   name: "TCM UI Lib",
-  description: "Customizable multi-project UI kit",
+  description: "Customizable_multi-project_UI_kit",
   type: "UI Kit",
   url: "https://www.npmjs.com/package/tcm-ui-kit",
 };
@@ -50,8 +50,8 @@ const BUSINESS = {
   preview: "/business-preview.png",
   logo: "/business-logo.png",
   name: "Telcell Business",
-  description: "Business growth landing page",
-  type: "Web app",
+  description: "Business_growth_landing_page",
+  type: "web_app",
   url: "",
 };
 const IPO = {
@@ -61,8 +61,8 @@ const IPO = {
   preview: "/invest-preview.png",
   logo: "/invest-logo.png",
   name: "Telcell Invest",
-  description: "IPO stock purchase page",
-  type: "Web app",
+  description: "IPO_stock_purchase_page",
+  type: "web_app",
   url: "",
 };
 

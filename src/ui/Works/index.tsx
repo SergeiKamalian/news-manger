@@ -1,11 +1,12 @@
 import { memo, useEffect, useRef, useState } from "react";
 import { WorkItem } from "./WorkItem";
 import { PROJECTS } from "../../constants";
+import { motion } from "framer-motion";
 
 export const Works = memo(() => {
   const containerRef = useRef<HTMLDivElement>(null);
   const itemRefs = useRef<(HTMLElement | null)[]>([]);
-  const [activeId, setActiveId] = useState<string | null>(null);
+  const [activeId, setActiveId] = useState<string | null>("-1");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -35,7 +36,7 @@ export const Works = memo(() => {
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll();
+    // handleScroll();
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -43,7 +44,10 @@ export const Works = memo(() => {
   }, [activeId]);
 
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0, scale: 0.99 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.7, delay: 0.5 }}
       className="w-full mt-[130px] sm:mt-[150px] lg:mt-[200px]"
       ref={containerRef}
     >
@@ -75,6 +79,6 @@ export const Works = memo(() => {
           )
         )}
       </div>
-    </div>
+    </motion.div>
   );
 });

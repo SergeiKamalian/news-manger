@@ -1,10 +1,11 @@
 import { memo } from "react";
 import { motion } from "framer-motion";
 import { GrowingDiv } from "../../components";
+import { useTranslation } from "react-i18next";
 
 export const Main = memo(() => {
   return (
-    <div className="w-full pt-[120px] flex flex-col items-center sm:pt-[100px]">
+    <div className="m-auto max-w-[1140px] px-[20px] w-full pt-[120px] flex flex-col items-center sm:pt-[100px]">
       <ImageAndTech />
       <MainText />
     </div>
@@ -12,6 +13,7 @@ export const Main = memo(() => {
 });
 
 const MainText = memo(() => {
+  const { t } = useTranslation();
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.95 }}
@@ -22,10 +24,10 @@ const MainText = memo(() => {
     >
       <p className="text-center text-[34px] font-medium leading-[1.4em] tracking-[-0.02em] text-[rgba(209,213,230,0.87)] font-sans sm:text-[44px]">
         <span className="bg-gradient-to-b from-[rgba(190,193,207,0.64)] via-[rgba(213,216,234,0.89)] to-[rgb(223,226,245)] bg-clip-text text-transparent">
-          Hi, I'm Sergey 💫 <br />{" "}
-          <span className="font-normal">I develop</span>{" "}
-          <span className="italic font-serif font-normal">front-end</span> for
-          websites
+          {t("hi")}, {t("im_sergey")} 💫 <br />{" "}
+          <span className="font-normal">{t("i_develop")}</span>{" "}
+          <span className="italic font-serif font-normal">front-end</span>{" "}
+          {t("for_websites")}
         </span>
       </p>
       <GrowingDiv className="w-fit">
@@ -34,7 +36,7 @@ const MainText = memo(() => {
             className="w-[10px] h-[10px] bg-black rounded-full"
             style={{ background: "rgba(55, 212, 133, 0.8)" }}
           />{" "}
-          Open to work
+          {t("open_to_work")}
         </div>
       </GrowingDiv>
     </motion.div>

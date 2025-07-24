@@ -1,6 +1,7 @@
 import { useScroll, useSpring, useTransform, motion } from "framer-motion";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { memo, useRef, type ReactNode } from "react";
+import { useTranslation } from "react-i18next";
 
 export const Contact = memo(() => {
   const ref = useRef<HTMLDivElement>(null);
@@ -60,7 +61,7 @@ export const Contact = memo(() => {
       </motion.div>
     );
   };
-
+  const { t } = useTranslation();
   return (
     <div
       className="mt-[50px] md:mt-[70px] max-w-[1140px] px-[20px] m-auto flex flex-row justify-between relative"
@@ -69,23 +70,23 @@ export const Contact = memo(() => {
       <div className="flex flex-col gap-6 relative z-10 w-full sm:w-auto">
         <p className="text-center text-[50px] font-bold leading-[1.4em] tracking-[-0.02em] text-[rgba(209,213,230,0.87)] font-sans w-fit">
           <span className="bg-gradient-to-b from-[rgba(190,193,207,0.64)] via-[rgba(213,216,234,0.89)] to-[rgb(223,226,245)] bg-clip-text text-transparent ">
-            Get in touch
+            {t("Get_in_touch")}
           </span>
         </p>
         <div className=" flex flex-col md:grid md:grid-cols-2 gap-2">
           {contactItem(
-            "Phone",
+            t("Phone"),
             "+374 93 604-808",
             <Phone color="hsl(234deg 21.74% 81.96%)" />
           )}
           {contactItem(
-            "Email",
+            t("Email"),
             "qamalyan2021gmail.com",
             <Mail color="hsl(234deg 21.74% 81.96%)" />
           )}
           {contactItem(
-            "Address",
-            "Yerevan, Armenia",
+            t("Address"),
+            t("yerevan"),
             <MapPin color="hsl(234deg 21.74% 81.96%)" />
           )}
           <div className="flex flex-row gap-4 items-center justify-center mt-5 md:mt-0">

@@ -1,6 +1,7 @@
 import { memo, useRef } from "react";
 import type { ProjectType } from "../../constants";
 import { useScroll, useTransform, motion, useSpring } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 interface WorkItemProps {
   project: ProjectType;
@@ -27,6 +28,7 @@ export const WorkItem = memo((props: WorkItemProps) => {
     [scale, rotateX],
     ([s, rx]) => `scale(${s}) rotateX(${rx}deg)`
   );
+  const { t } = useTranslation();
 
   return (
     <motion.div className="w-full relative group cursor-pointer" ref={ref}>
@@ -82,9 +84,9 @@ export const WorkItem = memo((props: WorkItemProps) => {
           }}
           className="w-fit"
         >
-          {project.type}
+          {t(project.type)}
         </span>
-        <div className="flex flex-row justify-between items-end">
+        <div className="flex flex-row justify-between items-end gap-2">
           <div className="flex flex-col">
             <p className="text-center text-[30px] font-bold leading-[1.4em] tracking-[-0.02em] text-[rgba(209,213,230,0.87)] font-sans w-fit">
               <span className="bg-gradient-to-b from-[rgba(190,193,207,0.64)] via-[rgba(213,216,234,0.89)] to-[rgb(223,226,245)] bg-clip-text text-transparent ">
@@ -94,11 +96,13 @@ export const WorkItem = memo((props: WorkItemProps) => {
             <span
               style={{ color: "rgba(255, 255, 255, 0.7)", fontWeight: 200 }}
             >
-              {project.description}
+              {t(project.description)}
             </span>
           </div>
           <motion.div
-            className="md:w-[64px] md:h-[64px] w-[50px] h-[50px] rounded-xl md:rounded-2xl overflow-hidden transition-all duration-500 group-hover:grayscale-0 grayscale"
+            className={`w-[50px] min-w-[50px] h-[50px] md:w-[64px] md:min-w-[64px] md:h-[64px] rounded-xl md:rounded-2xl overflow-hidden transition-all duration-500 
+    ${isActive ? "grayscale-0" : "grayscale"}
+    md:grayscale md:group-hover:grayscale-0`}
             style={{
               boxShadow:
                 "rgba(0, 0, 0, 0.08) 0px 0.482901px 1.06238px -0.5px, rgba(0, 0, 0, 0.23) 0px 4px 8.8px -1px, rgba(255, 255, 255, 0.06) 0px 0px 0px 1px",

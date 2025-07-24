@@ -1,5 +1,7 @@
 import { memo } from "react";
 import { motion, useScroll, useTransform, useMotionValue } from "framer-motion";
+import { ChangeLang } from "./ChangeLang";
+import { useTranslation } from "react-i18next";
 
 export const Header = memo(() => {
   const { scrollY } = useScroll();
@@ -14,6 +16,7 @@ export const Header = memo(() => {
     [translateX, scale],
     ([x, s]) => `translateX(${x}%) scale(${s})`
   );
+  const { t } = useTranslation();
 
   return (
     <motion.div
@@ -21,9 +24,9 @@ export const Header = memo(() => {
         opacity,
         transform: combinedTransform,
       }}
-      className="fixed top-[30px] left-1/2 w-full max-w-[1140px] px-[20px] flex items-center justify-center md:top-[60px] md:justify-between"
+      className="fixed top-[30px] left-1/2 w-full max-w-[1140px] px-[20px] flex items-center md:top-[60px] justify-between"
     >
-      <div className="flex flex-col justify-center items-center opacity-90 md:justify-start md:items-start">
+      <div className="flex flex-col opacity-90 justify-start items-start">
         <motion.h1
           initial={{ opacity: 0, scale: 0.7 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -48,19 +51,17 @@ export const Header = memo(() => {
             fontWeight: 200,
           }}
         >
-          Front-end developer
+          Front-end {t("developer")}
         </motion.h2>
       </div>
-      {/* <motion.div
-        className="flex flex-row gap-5"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.7, delay: 0.3 }}
+      <motion.div
+        className="flex flex-row gap-5 text-white"
+        initial={{ opacity: 0, scale: 0.7 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
       >
-        <AppButton>Work</AppButton>
-        <AppButton>Resume</AppButton>
-        <AppButton>Contact</AppButton>
-      </motion.div> */}
+        <ChangeLang />
+      </motion.div>
     </motion.div>
   );
 });
