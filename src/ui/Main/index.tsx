@@ -30,7 +30,12 @@ const MainText = memo(() => {
           {t("for_websites")}
         </span>
       </p>
-      <GrowingDiv className="w-fit">
+      <GrowingDiv
+        className="w-fit"
+        onClick={() =>
+          window.scrollTo({ top: 10000000000000, behavior: "smooth" })
+        }
+      >
         <div className="flex flex-row gap-3 items-center px-3">
           <div
             className="w-[10px] h-[10px] bg-black rounded-full"
